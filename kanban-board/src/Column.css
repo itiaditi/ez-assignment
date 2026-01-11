@@ -1,0 +1,170 @@
+.kanban-column {
+  background-color: white;
+  border-radius: 8px;
+  padding: 0;
+  min-width: 280px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-height: calc(100vh - 200px);
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.2s, border-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-column.drag-over {
+  background-color: #e8f4f8;
+  border-color: #4a90e2;
+  border-style: dashed;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 8px 8px 0 0;
+  color: white;
+  position: relative;
+}
+
+.column-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  flex: 1;
+}
+
+.card-count {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+.add-column-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.add-column-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.column-content {
+  flex: 1;
+  overflow-y: auto;
+  margin: 16px;
+  margin-bottom: 12px;
+  min-height: 100px;
+}
+
+.column-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.column-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.column-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.column-content::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.add-card-button {
+  width: calc(100% - 32px);
+  margin: 0 16px 16px;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.add-card-button:hover {
+  background-color: #e8e8e8;
+  border-color: #999;
+  color: #333;
+}
+
+.add-card-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 16px 16px;
+}
+
+.add-card-input input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #4a90e2;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+
+.add-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.add-card-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.add-card-btn {
+  background-color: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+
+.add-card-btn:hover {
+  background-color: #357abd;
+}
+
+.cancel-btn {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.cancel-btn:hover {
+  background-color: #e8e8e8;
+}

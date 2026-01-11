@@ -1,0 +1,91 @@
+.kanban-card {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 12px;
+  cursor: grab;
+  transition: box-shadow 0.2s, transform 0.2s;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.kanban-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #ffc107;
+}
+
+.kanban-card:hover:not(.dragging):not(.editing) {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.kanban-card.dragging {
+  cursor: grabbing;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.kanban-card.editing {
+  cursor: text;
+  box-shadow: 0 0 0 2px #4a90e2;
+}
+
+.card-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  padding-left: 16px;
+}
+
+.card-title {
+  flex: 1;
+  word-wrap: break-word;
+  line-height: 1.6;
+  color: #333;
+  cursor: text;
+  font-size: 14px;
+}
+
+.card-edit-input {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #4a90e2;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: none;
+}
+
+.card-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+  color: #dc3545;
+}
+
+.kanban-card:hover .card-delete-btn {
+  opacity: 1;
+}
+
+.card-delete-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Done column cards have green border */
+.kanban-card.done-card::before {
+  background-color: #4caf50;
+}
